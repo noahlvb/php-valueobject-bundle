@@ -3,7 +3,7 @@ Symfony intergation for my value object package
 
 ![CI](https://github.com/noahlvb/php-valueobject-bundle/workflows/CI/badge.svg?branch=master)
 [![codecov](https://codecov.io/gh/noahlvb/php-valueobject-bundle/branch/master/graph/badge.svg)](https://codecov.io/gh/noahlvb/php-valueobject-bundle)
-[![Latest Stable Version](https://poser.pugx.org/noahlvb-bundle/valueobject/v/stable)](https://packagist.org/packages/noahlvb/valueobject-bundle)
+[![Latest Stable Version](https://poser.pugx.org/noahlvb/valueobject-bundle/v/stable)](https://packagist.org/packages/noahlvb/valueobject-bundle)
 [![License](https://poser.pugx.org/noahlvb/valueobject-bundle/license)](https://packagist.org/packages/noahlvb/valueobject-bundle)
 
 Installation
