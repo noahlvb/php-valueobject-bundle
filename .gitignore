@@ -9,3 +9,4 @@ composer.lock
 ### Tests
 coverage/
 .phpunit.result.cache
+.phpcs-cache
