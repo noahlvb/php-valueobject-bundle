@@ -93,3 +93,14 @@ class EmailAddressConstraintValidator extends ValueObjectConstraintValidator
 }
 ```
 You have the create a empty class and extend the `ValueObjectConstraintValidator`. This is because Symfony Validator matches the constraint and its validator based on the class names.
+
+Lastly in your form type override the `getConstraintClassName()` with the class name of your newly created constraint. Like this:
+```php
+class EmailAddressForm extends ValueObjectForm
+{
+    protected function getConstraintClassName(): string
+    {
+        return EmailAddressConstraint::class;
+    }
+}
+```
