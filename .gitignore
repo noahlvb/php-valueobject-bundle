@@ -1,0 +1,11 @@
+### Composer
+composer.phar
+vendor/
+composer.lock
+
+### Style fixer
+.php_cs.cache
+
+### Tests
+coverage/
+.phpunit.result.cache

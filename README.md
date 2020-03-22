@@ -1,2 +1,2 @@
 # php-valueobject-bundle
-Symfony intergation for my valueobject package
+Symfony intergation for my value object package

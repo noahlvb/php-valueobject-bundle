@@ -1,0 +1,39 @@
+{
+    "name": "noahlvb/valueobject-bundle",
+    "description": "Symfony integration for my value object package",
+    "keywords": [
+        "valueObjects",
+        "DDD",
+        "scalar type",
+        "values",
+        "OOP",
+        "Symfony",
+        "Forms",
+        "Doctrine"
+    ],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Noah van Bochove",
+            "email": "mail@noahlvb.nl"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Noahlvb\\ValueObjectBundle\\": ["src/"]
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Noahlvb\\ValueObjectBundle\\Tests\\": ["tests/"]
+        }
+    },
+    "require": {
+        "php": "^7.1",
+        "noahlvb/valueobject": "^1.0",
+        "doctrine/dbal": "^2.10",
+        "symfony/form": "^5.0",
+        "symfony/validator": "^5.0"
+    }
+}
