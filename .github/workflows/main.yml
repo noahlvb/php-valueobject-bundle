@@ -20,7 +20,7 @@ jobs:
         run: composer install --prefer-dist --ignore-platform-reqs
 
       - name: Run PHPUnit unit tests
-        run: php7.3 vendor/bin/phpunit --testsuite=unit
+        run: php8.1 vendor/bin/phpunit --testsuite=unit
 
   code_sniffer:
     name: Code Style Sniffer
@@ -33,23 +33,4 @@ jobs:
         run: composer install --prefer-dist --ignore-platform-reqs
 
       - name: Run PHP_CodeSniffer
-        run: php7.3 vendor/bin/phpcs -p -n
-
-  code_coverage:
-    name: Code coverage
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v1
-
-      - name: Install composer dependencies
-        run: composer install --prefer-dist --ignore-platform-reqs
-
-      - name: Generating covarge report
-        run: php7.3 vendor/bin/phpunit --coverage-clover=coverage.xml
-
-      - name: Uploading coverage report
-        uses: codecov/codecov-action@v1
-        with:
-          flags: CI
-          fail_ci_if_error: true
+        run: php8.1 vendor/bin/phpcs -p -n
