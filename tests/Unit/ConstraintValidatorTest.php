@@ -9,6 +9,7 @@ use Noahlvb\ValueObjectBundle\Tests\Unit\Implementation\NonValueObject;
 use Noahlvb\ValueObjectBundle\Validator\Constraint\ValueObjectConstraint;
 use Noahlvb\ValueObjectBundle\Validator\Constraint\ValueObjectConstraintValidator;
 use Symfony\Component\Validator\Constraints\Positive;
+use Symfony\Component\Validator\ConstraintValidatorInterface;
 use Symfony\Component\Validator\Test\ConstraintValidatorTestCase;
 
 class ConstraintValidatorTest extends ConstraintValidatorTestCase
@@ -17,7 +18,7 @@ class ConstraintValidatorTest extends ConstraintValidatorTestCase
     private const EMAIL_ADDRESS_INVALID = 'mail@test@noahlvb.nl';
     private const VALUE_OBJECT_CONSTRAINT_MESSAGE = 'This value is not a valid this value object.';
 
-    protected function createValidator()
+    protected function createValidator(): ConstraintValidatorInterface
     {
         return new ValueObjectConstraintValidator();
     }
