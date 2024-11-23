@@ -16,16 +16,16 @@ abstract class ValueObjectType extends Type
 {
     abstract public function getClassName(): string;
 
-    public function getSQLDeclaration(array $fieldDeclaration, AbstractPlatform $platform)
+    public function getSQLDeclaration(array $column, AbstractPlatform $platform): string
     {
         $className = $this->getClassName();
 
         if (is_subclass_of($className, ValueObjectString::class)) {
-            return $platform->getVarcharTypeDeclarationSQL($fieldDeclaration);
+            return $platform->getVarcharTypeDeclarationSQL($column);
         }
 
         if (is_subclass_of($className, ValueObjectInteger::class)) {
-            return $platform->getIntegerTypeDeclarationSQL($fieldDeclaration);
+            return $platform->getIntegerTypeDeclarationSQL($column);
         }
 
         throw new Exception('Type ' . $this->getClassName() . ' is not supported');
@@ -46,7 +46,7 @@ abstract class ValueObjectType extends Type
         return new $className($value);
     }
 
-    public function convertToDatabaseValue($value, AbstractPlatform $platform)
+    public function convertToDatabaseValue($value, AbstractPlatform $platform): string | int | null
     {
         if (empty($value)) {
             return null;
@@ -64,7 +64,7 @@ abstract class ValueObjectType extends Type
         return $value->getValue();
     }
 
-    public function requiresSQLCommentHint(AbstractPlatform $platform)
+    public function requiresSQLCommentHint(AbstractPlatform $platform): bool
     {
         return true;
     }

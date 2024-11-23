@@ -19,7 +19,7 @@ abstract class ValueObjectForm extends AbstractType
         return ValueObjectConstraint::class;
     }
 
-    public function getParent()
+    public function getParent(): string
     {
         return TextType::class;
     }
